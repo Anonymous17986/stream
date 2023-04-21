@@ -11,13 +11,13 @@ class Var(object):
     MULTI_CLIENT = False
     API_ID = int(getenv('API_ID', '26305247'))
     API_HASH = str(getenv('API_HASH', '20ca7e6687c281e11782856c7efd0ff7'))
-    BOT_TOKEN = str(getenv('BOT_TOKEN', '6213184839:AAGDu5TrR6ZiUPB9n82e6z_Anb_b6gMr_mA'))
+    BOT_TOKEN = str(getenv('BOT_TOKEN', '6230153536:AAHua_9TC0C2Du4lD5doyMvIoynj-KV6_OE'))
     name = str(getenv('name', 'filetolinkbot'))
     SLEEP_THRESHOLD = int(getenv('SLEEP_THRESHOLD', '60'))
     WORKERS = int(getenv('WORKERS', '4'))
     BIN_CHANNEL = int(getenv('BIN_CHANNEL', '-1001953595001'))
     PORT = int(getenv('PORT', 8080))
-    BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
+    BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '47.254.239.178'))
     PING_INTERVAL = int(environ.get("PING_INTERVAL", "1200"))  # 20 minutes
     OWNER_ID = set(int(x) for x in os.environ.get("OWNER_ID", "5152847809").split())  
     NO_PORT = bool(getenv('NO_PORT', False))
@@ -29,7 +29,7 @@ class Var(object):
     
     else:
         ON_HEROKU = False
-    FQDN = str(getenv('FQDN', '47.254.239.178')) if not ON_HEROKU or getenv('FQDN', '47.254.239.178') else APP_NAME+'.herokuapp.com'
+    FQDN = str(getenv('FQDN', '47.254.239.178:8080')) if not ON_HEROKU or getenv('FQDN', '47.254.239.178:8080') else APP_NAME+'.herokuapp.com'
     HAS_SSL=bool(getenv('HAS_SSL',False))
     if HAS_SSL:
         URL = "https://{}/".format(FQDN)
